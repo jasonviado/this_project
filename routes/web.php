@@ -11,16 +11,19 @@
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-Route::get('/', 'logRegController@index');
-Route::match(array('POST','GET'),'login', 'logRegController@loginUser');
+Route::get('/', function() {
+    return redirect()->route('login');
+});
+Route::match(array('POST','GET'),'loginUser', 'logRegController@login');
 Route::group(['middleware'=>['clearCache']],function(){
-    Route::get('/', 'logRegController@index');
+    Route::get('login', 'logRegController@index')->name('login');
 });
 Route::group(['middleware'=>['auth']],function(){
     Route::group(['middleware'=>['clearCache']],function(){
         Route::get('home', 'logRegController@home');
     });
+});
+Route::get('logout', function(){
+    Auth::logout();
+    return Redirect::to('/');
 });

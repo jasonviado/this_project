@@ -6,7 +6,7 @@ $(document).ready(function (){
        e.preventDefault();
        $.ajax({
           method:"post",
-          url:"login",
+          url:"loginUser",
           data:$('#login-form').serialize(),
           dataType:"json",
           success:function(data){
