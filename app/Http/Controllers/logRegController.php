@@ -14,6 +14,7 @@ class logRegController extends Controller
         return view('login');
     }
     public function loginUser(Request $request){
+
         if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])){
             return array(
                 'status' => 'success'
@@ -21,6 +22,6 @@ class logRegController extends Controller
         }
     }
     public function home(){
-        return view('home');
+        return view('layouts.home');
     }
 }

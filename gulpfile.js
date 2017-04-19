@@ -16,11 +16,12 @@ const elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix.styles([
         './public/css/app.css',
-
+        './public/css/home.css',
     ]);
 
     mix.scripts([
         './public/js/app.js',
+        './public/js/jquery-3.1.1.min.js'
     ]);
 
 });
