@@ -8,8 +8,7 @@
     <script type="text/javascript" src="/js/all.js"></script>
 </head>
 <body>
-
-
+<input id="room" name="room" type="hidden" value="{{ $room }}">
 <div class="container">
     <div class="col-md-3 yield">
         @include('yield.left_side')
