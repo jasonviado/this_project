@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
+});*/
+Route::get('/', 'logRegController@index');
+Route::match(array('POST','GET'),'login', 'logRegController@loginUser');
+Route::group(['middleware'=>['clearCache']],function(){
+    Route::get('/', 'logRegController@index');
+});
+Route::group(['middleware'=>['auth']],function(){
+    Route::group(['middleware'=>['clearCache']],function(){
+        Route::get('home', 'logRegController@home');
+    });
 });
