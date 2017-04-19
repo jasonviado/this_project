@@ -26,7 +26,4 @@ class logRegController extends Controller
             );
         }
     }
-    public function home(){
-        return view('layouts.home');
-    }
 }
