@@ -20,7 +20,7 @@ Route::group(['middleware'=>['clearCache']],function(){
 });
 Route::group(['middleware'=>['auth']],function(){
     Route::group(['middleware'=>['clearCache']],function(){
-        Route::get('home', 'logRegController@home');
+        Route::get('home', 'HomeController@home');
     });
 });
 Route::get('logout', function(){
