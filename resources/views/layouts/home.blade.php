@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="/css/global.css">
     <script type="text/javascript" src="/js/app.js"></script>
     <script type="text/javascript" src="/js/home.js"></script>
-    <script type="text/javascript" src="/js/global.js"></script>
 </head>
 <body>
 <input id="room" name="room" type="hidden" value="{{ $room }}">

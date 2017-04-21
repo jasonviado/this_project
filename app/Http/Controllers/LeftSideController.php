@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Friends;
 use App\Todo;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -14,11 +15,13 @@ class LeftSideController extends Controller
     public function getFriends(){
         $friends = new Friends();
         $content = '';
+        $id = new  User();
         foreach($friends->myFriends() as $key => $value){
+            $id = $id->encryptStringArray($value->friend_id);
             $content = $content .'<div class="left_friends_list" style="clear: both;">'.
                 '<p class="left_friends" style="float: left;width: 50%;">'. $value->name .' '. $value->lname .'</p>'.
                 '<div style="float: right;width: 50%;margin: 10px 0;text-align: center;">'.
-                '<button class="visitUser" data-id="'. $value->friend_id.'" type="button">V</button>'.
+                '<button class="visitUser" data-id="'.$id.'" type="button">V</button>'.
                 '<button type="button">M</button><button type="button">C</button></div></div>';
         }
         return [
@@ -30,13 +33,14 @@ class LeftSideController extends Controller
         $todo = new Todo();
         $content = '';
         foreach ($todo->myTodo() as $key => $value) {
+            $id = $todo->encryptStringArray($value->id);
             if($value->status == 1){
                 $content = $content . '<div class="left_todo complete"><p>'. $value->todo_name .
                     ' </p><div class="left_btn_container"></div></div>';
             }else{
                 $content = $content . '<div class="left_todo incomplete"><p>'. $value->todo_name .
-                    ' </p><div class="left_btn_container"><button class="left_btn_check" data-id="'. $value->id .
-                    '">C</button><button class="left_btn_delete" data-id="'. $value->id .'">D</button></div></div>';
+                    ' </p><div class="left_btn_container"><button class="left_btn_check" data-id="'. $id .
+                    '">C</button><button class="left_btn_delete" data-id="'. $id .'">D</button></div></div>';
             }
         }
         return [
@@ -69,7 +73,9 @@ class LeftSideController extends Controller
         }
     }
     public function completeTodo(Request $request){
-        $data = Todo::where('id',$request->id)->where('user_id',Auth::user()->id)->first();
+        $thisid = new Todo();
+        $id = $thisid->decryptStringArray($request->id);
+        $data = Todo::where('id',$id)->where('user_id',Auth::user()->id)->first();
         if($data == null){
             return [
                 'status' => 'error',
@@ -77,7 +83,7 @@ class LeftSideController extends Controller
             ];
         }else{
             $updatePA = DB::table('tbl_todo')
-                ->where('id',$request->id)
+                ->where('id',$id)
                 ->update(['status' => 1]);
             return [
                 'status' => 'success',
@@ -87,15 +93,17 @@ class LeftSideController extends Controller
     }
     public function getNotFriends(){
         $notFriends = new Friends();
+        $id = new User();
         $notMyFriends = '';
         $notFriends = $notFriends->find_friends(Auth::user()->id);
         foreach($notFriends as $key => $value){
+            $id = $id->encryptStringArray($value['id']);
             $notMyFriends = $notMyFriends.'<div class="left_notfriends_list" style="clear: both;">'.
                     '<p class="left_friends" style="float: left;width: 50%;">'. $value['name'] .' '
                     . $value['lname'] . ' ('. $value['mutual'] .')</p>'.
                     '<div style="float: right;width: 50%;margin: 10px 0;text-align: center;">'.
                     '<button type="button">A</button>
-                    <button class="visitUser" data-id="'. $value['id'].'" type="button">V</button>'.
+                    <button class="visitUser" data-id="'. $id .'" type="button">V</button>'.
                     '<button type="button">M</button></div></div>';
         }
 

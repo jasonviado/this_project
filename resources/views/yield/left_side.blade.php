@@ -5,15 +5,15 @@
         <div class="left_top_images left_btn1">
             <img src="../images/unknown.png" alt="Friends">
         </div>
-        <div class="left_top_images left_btn2">
-            <img src="../images/unknown.png" alt="Groups">
-        </div>
+<!--        <div class="left_top_images left_btn2">-->
+<!--            <img src="../images/unknown.png" alt="Groups">-->
+<!--        </div>-->
         <div class="left_top_images left_btn3">
             <img src="../images/unknown.png" alt="To Do's">
         </div>
-        <div class="left_top_images left_btn4">
-            <img src="../images/unknown.png" alt="Global Chat">
-        </div>
+<!--        <div class="left_top_images left_btn4">-->
+<!--            <img src="../images/unknown.png" alt="Global Chat">-->
+<!--        </div>-->
         <div class="left_top_images left_btn5">
             <img src="../images/unknown.png" alt="Find Friends">
         </div>

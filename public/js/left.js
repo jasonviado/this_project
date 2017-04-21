@@ -3,6 +3,7 @@
  */
 
 $(document).ready(function(){
+
     $('.left_btn1').on('click',function(e){
        $('.left_title b').html($(this).children("img").attr("alt"));
        getFriends(e);
@@ -36,7 +37,12 @@ $(document).ready(function(){
         alert($(this).data('id'));
     });
     $(document).delegate('.visitUser','click',function(){
-       alert($(this).data('id'));
+        if($(location).prop('pathname').split('/')[1] != 'profile'){
+            window.location = 'profile/'+$(this).data('id');
+        }else{
+            window.location = $(this).data('id');
+        }
+
     });
 });
 
@@ -59,7 +65,7 @@ function getFriends(e){
         complete :function(){
             $('.left_bot_text .globalLoader').remove();
             me.data('requestRunning', false);
-            console.clear();
+//            console.clear();
         }
     });
 }

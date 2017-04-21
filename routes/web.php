@@ -24,10 +24,17 @@ Route::group(['middleware'=>['auth']],function(){
         Route::get('getFriends', 'LeftSideController@getFriends');
         Route::get('getTodo', 'LeftSideController@getTodo');
         Route::get('getNotFriends', 'LeftSideController@getNotFriends');
-
         Route::post('addTodo', 'LeftSideController@addTodo');
         Route::post('completeTodo','LeftSideController@completeTodo');
 
+
+
+        Route::get('profile/getFriends', 'LeftSideController@getFriends');
+        Route::get('profile/getTodo', 'LeftSideController@getTodo');
+        Route::get('profile/getNotFriends', 'LeftSideController@getNotFriends');
+        Route::post('profile/addTodo', 'LeftSideController@addTodo');
+        Route::post('profile/completeTodo','LeftSideController@completeTodo');
+        Route::get('profile/{id}','VisitController@profile');
     });
 });
 Route::get('logout', function(){
