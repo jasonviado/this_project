@@ -63,3 +63,13 @@
     color: black;
     margin: 0 5px;
 }
+.left_pendingfriends_list button{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #000000;
+    background-color: #808080;
+    border-radius: 100%;
+    color: black;
+    margin: 0 5px;
+}

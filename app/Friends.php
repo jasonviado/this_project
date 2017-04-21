@@ -21,12 +21,19 @@ class Friends extends Model
     public function find_friends($id){
         $data1 = Friends::where('user_id',$id)->join('users','tbl_friends.friend_id','users.id')->select('friend_id as id')->get();
         $data2 = Friends::where('friend_id',$id)->join('users','tbl_friends.user_id','users.id')->select('user_id as id')->get();
-        $data = json_decode($data1,true)+json_decode($data2,true);
-        $friends = [];
-        foreach($data as $key => $val){
-            $friends[$key] = $val['id'];
-
+        $holder_data1 = [];
+        $holder_data2 = [];
+        $counter = 0;
+        foreach($data1 as $key => $val){
+            $holder_data1[$counter] = $val->id;
+            $counter++;
         }
+        $counter = 0;
+        foreach($data2 as $key => $val){
+            $holder_data2[$counter] = $val->id;
+            $counter++;
+        }
+        $friends = array_unique(array_merge($holder_data1,$holder_data2));
         $people = User::all();
         $all = [];
         foreach($people as $key => $val){
@@ -50,5 +57,15 @@ class Friends extends Model
             $count++;
         }
         return $user_data_val;
+    }
+    public function pending_friends(){
+        return Friends::where('user_id',Auth::user()->id)
+            ->where('status',0)
+            ->join('users','tbl_friends.friend_id','users.id')->get();
+    }
+    public function get_friend_request(){
+        return Friends::where('friend_id',Auth::user()->id)
+            ->where('status',0)
+            ->join('users','tbl_friends.user_id','users.id')->get();
     }
 }

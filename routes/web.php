@@ -27,9 +27,18 @@ Route::group(['middleware'=>['auth']],function(){
         Route::get('getNotFriends', 'LeftSideController@getNotFriends');
         Route::post('addTodo', 'LeftSideController@addTodo');
         Route::post('completeTodo','LeftSideController@completeTodo');
+        Route::get('getPendingFriends','LeftSideController@getPendingFriends');
+        Route::get('getFriendRequest','LeftSideController@getFriendRequest');
+        Route::post('acceptFriend','LeftSideController@acceptFriend');
 
 
+        Route::post('addFriend','LeftSideController@addFriend');
+        Route::post('profile/addFriend','LeftSideController@addFriend');
 
+
+        Route::post('profile/acceptFriend','LeftSideController@acceptFriend');
+        Route::get('profile/getFriendRequest','LeftSideController@getFriendRequest');
+        Route::get('profile/getPendingFriends','LeftSideController@getPendingFriends');
         Route::get('profile/getFriends', 'LeftSideController@getFriends');
         Route::get('profile/getTodo', 'LeftSideController@getTodo');
         Route::get('profile/getNotFriends', 'LeftSideController@getNotFriends');
