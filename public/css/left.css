@@ -7,6 +7,7 @@
     width: 100%;
     height: 100%;
     clear: both;
+    border-bottom: thick dotted gray;
 }
 .left_bot{
     height: 85%;
@@ -18,21 +19,52 @@
     height: 100%;
 }
 .left_title{
-    height: 5%;
+    height: 10%;
 }
 .left_bot_text{
     height: 95%;
-    border: 1px solid black;
-    overflow-y: scroll;
-    max-height: 95%;
+    border: 1px solid #000;
+    overflow-y: auto;
+    max-height: 90%;
+    border-radius: 10px;
+    padding: 10px;
 }
 .left_top_images{
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 35px;
     float: left;
     margin: 0px 13px;
 }
 .left_top_images img{
     width: auto;
     height: 100%;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.left_friends{
+    margin: 10px 0px;
+}
+.left_todo{
+    clear: both;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.left_todo p{
+    float: left;
+    width: 70%;
+    border-bottom: 1px solid gold;
+}
+.left_todo div{
+    float: right;
+    width: 30%;
+    text-align: center;
+}
+.left_todo.complete{
+    color: #00ff00;
+}
+.left_todo.incomplete{
+    color: #ffa07a;
+}
+#addTodo,#sendGlobalChat{
+    text-align: center;
 }

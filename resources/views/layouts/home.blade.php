@@ -5,6 +5,7 @@
     <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
     <link rel="stylesheet" href="/css/all.css">
     <link rel="stylesheet" href="/css/home.css">
     <script type="text/javascript" src="/js/all.js"></script>

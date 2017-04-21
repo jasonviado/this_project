@@ -21,6 +21,13 @@ Route::group(['middleware'=>['clearCache']],function(){
 Route::group(['middleware'=>['auth']],function(){
     Route::group(['middleware'=>['clearCache']],function(){
         Route::get('home', 'HomeController@home');
+        Route::get('getFriends', 'LeftSideController@getFriends');
+        Route::get('getTodo', 'LeftSideController@getTodo');
+        Route::get('getNotFriends', 'LeftSideController@getNotFriends');
+
+        Route::post('addTodo', 'LeftSideController@addTodo');
+        Route::post('completeTodo','LeftSideController@completeTodo');
+
     });
 });
 Route::get('logout', function(){
