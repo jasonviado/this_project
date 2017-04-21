@@ -33,40 +33,40 @@
                         <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
                         <div class="area_left_container">
                             <div class="form-group col-lg-12">
-                                <label for="formGroupExampleInput">Full Name</label>
-                                <input type="text" class="form-control remove" id="formGroupExampleInput" placeholder="Example input" disabled>
+                                <label for="formGroupExampleInput">Last Name</label>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput" name="lname" value="{{ Auth::user()->lname }}" disabled>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="formGroupExampleInput">First Name</label>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput" name="name" value="{{ Auth::user()->name }}" disabled>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput2">Nickname</label>
-                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" name="nickname" value="{{ $user->nickname }}" disabled>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput2">Email</label>
-                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                                <input type="text" class="form-control" id="formGroupExampleInput2" name="email" value="{{ Auth::user()->email }}" disabled>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput2">Address</label>
-                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" name="address" value="{{ $user->address }}" disabled>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput2">Age</label>
-                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                                <input type="text" class="form-control" id="formGroupExampleInput2" name="age" value="{{ intval(date('Y', time() - strtotime(Auth::user()->dateofbirth))) - 1970 }}" disabled>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput2">Gender/Sex</label>
-                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                                <input type="text" class="form-control" id="formGroupExampleInput2" name="gender" value="{{ Auth::user()->gender }}" disabled>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput2">Nationality</label>
-                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <label for="formGroupExampleInput2">Place of Birth</label>
-                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" name="nationality" value="{{ $user->nationality }}" disabled>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput2">Date of Birth</label>
-                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" name="dateofbirth" value="{{ Auth::user()->dateofbirth }}" disabled>
                             </div>
                         </div>
                         <div class="area_right_container">
@@ -74,23 +74,23 @@
                             <button class="cancel-btn">Cancel</button>
                             <div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput">School</label>
-                                <input type="text" class="form-control remove" id="formGroupExampleInput" placeholder="Example input" disabled>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput" name="school" value="{{ $user->school }}" disabled>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput2">Work</label>
-                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" name="work" value="{{ $user->work }}" disabled>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput2">Professional Skills</label>
-                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" name="professional" value="{{ $user->professionalskills }}" disabled>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput2">Phone Number</label>
-                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" name="pnumber" value="{{ $user->pnumber }}" disabled>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput2">Status</label>
-                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" name="status" value="{{ $user->status }}" disabled>
                             </div>
                             <!--<div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput2">Place of Birth</label>
