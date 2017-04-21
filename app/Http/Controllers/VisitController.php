@@ -10,6 +10,8 @@ class VisitController extends Controller
 {
     public function profile($id){
         $thisid = new User();
-        return view('layouts.visit')->with('room',encrypt(Auth::user()->id));
+
+        $visit = User::find($thisid->decryptStringArray($id));
+        return view('layouts.visit')->with('room',encrypt(Auth::user()->id))->with('visit',$visit);
     }
 }
