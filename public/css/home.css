@@ -14,25 +14,101 @@
     right:0;
     top:0;
     border-bottom-left-radius: 100%;
-    transition: all 3s;
+    transition: all 1s ease-in-out;
     box-shadow: -10px 5px 40px grey;
 }
 .transition_btn{
     width:40px;
     height:40px;
-    background:#fff;
+    background: #fff;
     border-radius: 50%;
     position: absolute;
     top: 15px;
     right: 15px;
+    cursor: pointer;
+}
+#img_profile_pic_click{
+    width:inherit;
+    height:inherit;
+    border-radius: inherit;
 }
 .dp_container{
-     width:300px;
-     height:300px;
-     background: #3D9970 ;
-     position:absolute;
-     right:60px;
-     top:0;
+     border-bottom-left-radius: 100%;
+     background: #0074D9;
+     visibility: hidden;
+     display:block;
      opacity:0;
-     transition:all 5s ease-in-out;
- }
+     position:relative;
+     overflow: hidden;
+     transition:all 1s ease-in-out;
+}
+.profile_container{
+    width:30%;
+    height:inherit;
+    background:#DDD;
+    display:block;
+    visibility: hidden;
+    position:relative;
+    float:left;
+    border-bottom-left-radius: 100%;
+    border: 5px solid #DDD;
+    transition:all 1s ease-in-out;
+}
+.info_container{
+    width:70%;
+    height:inherit;
+    background: #0074D9;
+    float:left;
+    position: relative;
+    z-index: 1;
+}
+.change_dp_container{
+    background: #DDD;
+    height: 30%;
+    left: 77%;
+    position: absolute;
+    top: 30%;
+    width: 45%;
+    border: 3px solid #DDD;
+}
+#img_cover_pic, #img_profile_pic{
+    width:100%;
+    height: 100%;
+    max-height: 100%;
+    max-width:100%;
+    border-radius: 8px;
+    position:relative;
+    z-index: 2;
+}
+.area_container{
+    background:#AAAAAA;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    border-radius: 8px;
+}
+.area_container .area_left_container{
+    border-right:2px dashed #001f3f;
+}
+.area_left_container, .area_right_container{
+    width: 50%;
+    height: 85%;
+    background: transparent;
+    float:left;
+    margin:40px 0;
+}
+.area_container .form-group{
+    margin-bottom:0;
+}
+.area_container .form-group label, .area_container .form-group input{
+    font-size:12px;
+}
+.area_container .form-group .form-control{
+    height:30px;
+}
+
