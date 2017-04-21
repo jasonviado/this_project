@@ -8,9 +8,11 @@
     <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/visit.css">
     <link rel="stylesheet" href="/css/global.css">
     <script type="text/javascript" src="/js/app.js"></script>
     <script type="text/javascript" src="/js/home.js"></script>
+    <script type="text/javascript" src="/js/visit.js"></script>
 </head>
 <body>
 <input id="room" name="room" type="hidden" value="{{ $room }}">
@@ -18,7 +20,6 @@
     <div class="col-md-3 yield">@include('yield.left_side')</div>
     <div class="col-md-6 yield">@include('yield.mid_side')</div>
     <div class="col-md-3 yield">@include('yield.right_side')</div>
-
     <div class="transition_div">
         <div class="transition_btn">
             <img id="img_profile_pic_click" src="/images/profile.jpg" />
@@ -101,6 +102,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="goHome">
+
     </div>
 </div>
 </body>

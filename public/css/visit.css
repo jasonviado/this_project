@@ -1,0 +1,10 @@
+.goHome{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-bottom-right-radius: 100%;
+    cursor: pointer;
+}
