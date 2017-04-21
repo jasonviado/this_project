@@ -80,6 +80,9 @@
     position:relative;
     z-index: 2;
 }
+.form-aboutYou{
+    height: 100%;
+}
 .area_container{
     background:#AAAAAA;
     position: absolute;
@@ -88,7 +91,7 @@
     left: 0;
     right: 0;
     width: 80%;
-    height: 80%;
+    height: 90%;
     margin: auto;
     border-radius: 8px;
 }
@@ -101,6 +104,7 @@
     background: transparent;
     float:left;
     margin:40px 0;
+    position:relative;
 }
 .area_container .form-group{
     margin-bottom:0;
@@ -111,4 +115,12 @@
 .area_container .form-group .form-control{
     height:30px;
 }
-
+.saveInfo-btn, .cancel-btn{
+    position:absolute;
+    top:-20px;
+    right:15px;
+}
+.cancel-btn{
+    visibility: hidden;
+    right:70px;
+}

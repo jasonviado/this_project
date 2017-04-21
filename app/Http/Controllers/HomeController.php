@@ -13,4 +13,7 @@ class HomeController extends Controller
     public function home(){
         return view('layouts.home')->with('room',encrypt(Auth::user()->id));
     }
+    public function editUser(){
+        return "asdf";
+    }
 }

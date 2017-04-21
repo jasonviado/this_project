@@ -47,4 +47,28 @@ $(document).ready(function () {
             });
         }
     });
+    $('.saveInfo-btn').click(function(e){
+        e.preventDefault();
+        if($(this).val() == num){
+            $.ajax({
+                method:"POST",
+                url:"editUser",
+                dataType:"json",
+                data:$('#form-aboutYou').serialize(),
+                success: function(){
+
+                }
+            });
+        }
+        $(this).html('Save').attr('type','submit').val(1);
+        $('.remove').removeAttr('disabled');
+        $('.cancel-btn').css('visibility','visible');
+    });
+    $('.cancel-btn').click(function(e){
+        e.preventDefault();
+        $('.remove').attr('disabled','true');
+        $(this).css('visibility','hidden');
+        $('.saveInfo-btn').html('Edit').removeAttr('type','submit').val(0);
+
+    })
 });

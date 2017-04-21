@@ -29,76 +29,79 @@
             </div>
             <div class="info_container">
                 <div class="area_container">
-                    <div class="area_left_container">
-                        <form id="form-aboutYou" class="form-aboutYou" method="POST">
+                    <form id="form-aboutYou" class="form-aboutYou">
+                        <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
+                        <div class="area_left_container">
                             <div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput">Full Name</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                                <input type="text" class="form-control remove" id="formGroupExampleInput" placeholder="Example input" disabled>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput2">Nickname</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <label for="formGroupExampleInput2">Address</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <label for="formGroupExampleInput2">Age</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <label for="formGroupExampleInput2">Gender/Sex</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <label for="formGroupExampleInput2">Nationality</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <label for="formGroupExampleInput2">Place of Birth</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <label for="formGroupExampleInput2">Date of Birth</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-                            </div>
-                    </div>
-                    <div class="area_right_container">
-                            <div class="form-group col-lg-12">
-                                <label for="formGroupExampleInput">School</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <label for="formGroupExampleInput2">Work</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <label for="formGroupExampleInput2">Professional Skills</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput2">Email</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="formGroupExampleInput2">Address</label>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="formGroupExampleInput2">Age</label>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="formGroupExampleInput2">Gender/Sex</label>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="formGroupExampleInput2">Nationality</label>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="formGroupExampleInput2">Place of Birth</label>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="formGroupExampleInput2">Date of Birth</label>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                            </div>
+                        </div>
+                        <div class="area_right_container">
+                            <button class="saveInfo-btn" value="0">Edit</button>
+                            <button class="cancel-btn">Cancel</button>
+                            <div class="form-group col-lg-12">
+                                <label for="formGroupExampleInput">School</label>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput" placeholder="Example input" disabled>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="formGroupExampleInput2">Work</label>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="formGroupExampleInput2">Professional Skills</label>
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput2">Phone Number</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput2">Status</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                                <input type="text" class="form-control remove" id="formGroupExampleInput2" placeholder="Another input" disabled>
                             </div>
-                            <div class="form-group col-lg-12">
+                            <!--<div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput2">Place of Birth</label>
                                 <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="formGroupExampleInput2">Date of Birth</label>
                                 <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-                            </div>
-                        </form>
-                    </div>
+                            </div>-->
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
