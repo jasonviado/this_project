@@ -1,4 +1,4 @@
-<!--<link rel="stylesheet" href="/css/left.css">-->
+<link rel="stylesheet" href="/css/left.css">
 <script type="text/javascript" src="/js/left.js"></script>
 <div class="left_top">
     <div class="left_top_content">

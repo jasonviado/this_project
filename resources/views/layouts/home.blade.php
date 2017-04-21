@@ -6,10 +6,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
-    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/home.css">
-    <script type="text/javascript" src="/js/all.js"></script>
+    <link rel="stylesheet" href="/css/global.css">
+    <script type="text/javascript" src="/js/app.js"></script>
     <script type="text/javascript" src="/js/home.js"></script>
+    <script type="text/javascript" src="/js/global.js"></script>
 </head>
 <body>
 <input id="room" name="room" type="hidden" value="{{ $room }}">
